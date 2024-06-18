@@ -1,11 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Post
-
-
-from django.shortcuts import render, get_object_or_404
-from django.views import generic
 from .models import Event
+from .models import About
 
 
 class EventsList(generic.ListView):
@@ -56,3 +53,8 @@ def post_detail(request, slug):
         "blog/post_detail.html",
         {"post": post},
     )
+
+
+def about_view(request):
+    about_content = About.objects.first()  # Assuming you only have one About entry
+    return render(request, 'about/about.html', {'about': about_content})

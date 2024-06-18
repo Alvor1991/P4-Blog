@@ -39,5 +39,10 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
 
+class About(models.Model):
+    title = models.CharField(max_length=100)  # Assuming 'Content' corresponds to a title
+    text = models.TextField()  # Assuming 'Text' corresponds to the main content
 
+    def __str__(self):
+        return self.title
  
