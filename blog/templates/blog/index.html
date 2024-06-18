@@ -22,10 +22,8 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
-                            </p>
+                            <p class="card-text text-muted h6">{{ post.created_on }}</p>
                         </div>
                     </div>
                 </div>
@@ -34,7 +32,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
@@ -43,14 +40,12 @@
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li>
-                <a href="?page={{ page_obj.previous_page_number }}"
-                class="page-link">&laquo; PREV</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
             </li>
             {% endif %}
             {% if page_obj.has_next %}
             <li>
-                <a href="?page={{ page_obj.next_page_number }}"
-                class="page-link">NEXT &raquo;</a>
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
             </li>
             {% endif %}
         </ul>
@@ -59,6 +54,8 @@
 </div>
 
 <!-- index.html content ends here -->
+{% endblock %}  <!-- End of content block -->
+
 {% block copyright %}
     Copyright 2024 Ryan Nolan
 {% endblock %}
