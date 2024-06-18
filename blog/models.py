@@ -39,10 +39,19 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
 
+ # Define the Event model
+class Event(models.Model):
+    event_name = models.CharField(max_length=100)
+    event_description = models.TextField()
+    event_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.event_name
+
+# Define the About model
 class About(models.Model):
-    title = models.CharField(max_length=100)  # Assuming 'Content' corresponds to a title
-    text = models.TextField()  # Assuming 'Text' corresponds to the main content
+    title = models.CharField(max_length=100)
+    content = models.TextField()
 
     def __str__(self):
         return self.title
- 
