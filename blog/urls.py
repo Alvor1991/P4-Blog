@@ -9,4 +9,6 @@ urlpatterns = [
     # Event URLs
     path('events/', views.EventsList.as_view(), name='events_home'),  # Changed the name to avoid conflict
     path('events/<int:event_id>/', views.event_detail, name='event_detail'),
+    path('<slug:slug>/edit_comment/<int:comment_id>',
+         views.comment_edit, name='comment_edit'),
 ]
